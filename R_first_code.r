@@ -9,5 +9,5 @@ fishes <- c(10,50,60,100,200)
 fishes
 
 # plot the diversity of fishes (y) versus the amount of water (x)
-plot(water, fishes)
+plot(WATER, fishes)
 
