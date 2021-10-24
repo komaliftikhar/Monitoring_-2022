@@ -18,6 +18,35 @@ streams <- data.frame(WATER, fishes)
 
 streams
 
+# From now on, we are going to import and/export data!
+
+# setwed Mac
+# setwed ("/Users/komaliftikhar/Desktop/lab")
+
+# lets export our table!
+# https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/write.table
+write.table (streams, file= "my_first_table.txt")
+
+# some collegues did send us a table! how to import it in R? 
+read.table ("my_first_table.txt")
+# lets assign it to an object inside R
+ducciotable <- read.table ("my_first_table.txt")
+
+# the first statistics for lazy beautiful people!
+summary (ducciotable)
+
+# marta does not like WATER
+# marta wants to get info only on fishes
+summary (ducciotable$fishes)
+
+# histogram
+hist (ducciotable$fishes)
+hist (ducciotable$WATER)
+
+
+
+
+
 
 
 
