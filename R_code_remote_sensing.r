@@ -33,3 +33,35 @@ plotRGB(p224r63_2011, r=3, g=2, b=1, stretch="Lin")
 # stretch means how far we want our data to be stretched so use this function
 plotRGB(l2011, r=3, g=2, b=1, stretch="Lin")
 #the image we got is called landscape image.
+
+
+setwd("/Users/komaliftikhar/Desktop/lab/") # mac
+#to again enter the setwd typr this code.
+#plot is afunction and a function is always in paraenteses.
+
+#lets plot the green band. you shoud put exactly the name. co R is case sensitive.
+plot(l2011$B2_sre)
+
+#so the plot we get is not good so we are changing the colors of the scheme. what we are seeing 
+
+colorRampPalette
+cl <- colorRampPalette(c("black","grey","light grey"))(100)
+plot(l2011$B2_sre, col=cl)
+ 
+#change the colorRamPalette color with 
+
+clg <- colorRampPalette(c("dark green","green","light green"))(100)
+plot(l2011$B2_sre, col=clg)
+
+#do the same for other colors
+clb <- colorRampPalette(c("dark blue","blue","light blue"))(100)
+plot(l2011$B1_sre, col=clb)
+
+#plot both 
+
+par(mfrow=c(1,2))
+plot(l2011$B1_sre, col=clb)
+plot(l2011$B2_sre, col=clg)
+
+dev.off()
+
