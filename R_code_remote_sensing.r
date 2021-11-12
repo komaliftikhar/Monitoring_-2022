@@ -90,3 +90,18 @@ plot(l2011$B1_sre, col=clb)
 
 clg <- colorRampPalette(c("dark green","green","light green"))(100)
 plot(l2011$B2_sre, col=clg)
+
+
+# final day the tropical forest.
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")
+dev.off()
+plotRGB(l2011, r=4, g=3, b=2, stretch="Hist")
+# IMPORTING PAST DATA.
+l1988 <- brick("p224r63_1988.grd")
+l1988
+par(mfrow=c(2,1))
+plotRGB(l1988, r=4, g=3, b=2, stretch="Lin")  
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")  
+ # put the NIR in the blue channel
+plotRGB(l1988, r=2, g=3, b=4, stretch="Lin")  
+plotRGB(l2011, r=2, g=3, b=4, stretch="Lin")  
