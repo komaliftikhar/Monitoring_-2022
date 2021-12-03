@@ -1,0 +1,71 @@
+#R_code_quantitative_landcover estimate in R
+library(raster)
+ 
+ library(RStoolbox)
+setwd("~/lab/") # Linux
+# setwd("C:/lab/") # Windows
+# setwd("/Users/name/Desktop/lab/") # Mac
+ setwd("/Users/komaliftikhar/Desktop/lab/")
+ 
+ # brick function we are going to use. so how to make use of this function.we are going to use lapply function. 
+ #lapply function consists of 3 steps.
+ 
+ # so
+ #1 list the files available
+ rlist <- list.files(pattern= "defor")
+ rlist
+ 
+ # 2 lapply: apply a function to a list
+list_rast <- lapply(rlist, brick)
+list_rast
+ 
+ plot(list_rast[[1]])
+ # SO IN THIS example we are not using $ function infact using this bracket and see the final structure.
+ 
+ #defir: NIR 1; RED 2, GREEN 3
+ plotRGB(list_rast[[1]], r=1, g=2, b=3)
+ 
+ l1996 <- list_rast[[1]]
+ plotRGB(l1966, r=1, g=2, b=3, stretch="lin")
+ 
+ l1992 <- list_rast[[1]]
+plotRGB(l1992, r=1, g=2, b=3, stretch="lin")
+
+plotRGB(l1992, r=1, g=2, b=3, stretch="lin")
+
+l2006 <- list_rast[[2]]
+plotRGB(l2006, r=1, g=2, b=3, stretch="lin")
+
+#unsupervised classification 
+l1992c <- unsuperClass(l1992, nClasses=2, )
+
+#plot
+plot(l1992c$map)
+# value 1= agricultural areas and water
+# value 2= forests
+
+freq(l1992c$map)
+# value count
+value   count
+[1,]     1  311445
+[2,]     2 1488555
+
+# agricultural areas and water (class 1) = 311445
+# forest (class 2) = 1488555
+total  <- 1488555
+propagri <- 311445/total. ... 0.2092264
+propforest <- 1488555/total... 1
+
+#so get the proportions
+
+# build a dataframe
+cover <- c("Forest", "Agriculture")
+prop1992 <- c(0.2092264, 1)
+proportion1992 <- data.frame(cover, prop1992)
+
+
+library(ggplot2)
+# we want to make a plot 
+ggplot(proportion1992, aes(x=cover, y=prop1992, color=cover)) + geom_bar(stat= "identity")
+
+ggplot(proportion1992, aes(x=cover, y=prop1992, color=cover)) + geom_bar(stat="identity", fill="white")
