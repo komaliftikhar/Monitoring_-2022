@@ -1,0 +1,50 @@
+library(raster)
+library(RStoolbox) # we are using this package to make the classification
+library(ggplot2)
+setwd("/Users/name/Desktop/lab/") # Mac
+
+# brick
+# 1 list the files available
+rlist <- list.files(pattern="defor")
+rlist
+
+list_rast <- lapply(rlist, brick) # lapply(x, FUN)
+list_rast
+
+l1992 <- list_rast[[1]]
+
+plotRGB(l1992, r=1, g=2, b=3, stretch="lin")
+
+# unsupervised classification
+l1992c <- unsuperClass(l1992, nClasses=2) # unsuperClass(x, nClasses)
+
+plot(l1992c$map)
+
+freq(l1992c$map)
+
+cover <- c("Forest", "Agriculture")
+# prop1992 <- c(0.8982982, 0.1017018)
+
+prop1992 <- c(propforest, propagri)
+proportion1992 <- data.frame(cover, prop1992)
+
+ggplot(proportion1992, aes(x=cover, y=prop1992, color=cover)) + geom_bar(stat="identity", fill="white")
+
+# build a dataframe
+cover <- c("Forest", "Agriculture")
+# prop1992 <- c(0.8982982, 0.1017018)
+prop1992 <- c(propforest, propagri)
+ 
+proportion1992 <- data.frame(cover, prop1992)
+ 
+ggplot(proportion1992, aes(x=cover, y=prop1992, color=cover)) + geom_bar(stat="identity", fill="white")
+ 
+ 
+ ggplot(proportion1992, aes(x=cover, y=prop1992, color=cover)) + geom_bar(stat="identity", fill="white")
+ 
+ 
+ 
+ # the errors come due to the fact that i dont explain to the system about the l2006 list in the system
+ l2006 <- list_rast[[2]]
+ 
+ 
