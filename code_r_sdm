@@ -1,0 +1,43 @@
+#species distribution
+install.packages("sdm")
+
+library(sdm)
+library(raster) # predictors
+library(rgdal) # species
+
+file <- system.file("external/spcies.shp", package="sdm")
+
+file
+
+species <- shapefile(file) # exactly as raster data for raster files
+
+species[species$Occurrence == 1,]
+presences <- species[species$Occurrence == 1,]
+absences <- species[species$Occurrence == 0,]
+
+plot(species, pch=19)
+
+plot(presences, pch=19, col="blue")
+
+plot(presences, pch=19, col="blue")
+points(absences, pch=19, col="red")
+
+
+path <- system.file("external", package="sdm")
+lst <- list.files(path, pattern='asc')
+
+lst <- list.files(path, pattern='asc', full.names=T)
+
+
+cl <- colorRampPalette(c('blue','orange','red','yellow')) (100)
+
+cl <- colorRampPalette(c('blue','orange','red','yellow')) (100)
+plot(preds, col=cl) 
+
+
+plot(preds$elevation, col=cl)
+points(presences, pch=19)
+
+
+plot(preds$temperature, col=cl)
+points(presences, pch=19)
