@@ -97,3 +97,4 @@ ext <- c(0, 20, 30, 50)
 ssummer_cropped <- crop(ssummer, ext)
 swinter_cropped <- crop(swinter, ext)
 
+
