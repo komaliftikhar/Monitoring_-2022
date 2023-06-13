@@ -47,4 +47,4 @@ ggplot(proportion1992, aes(x=cover, y=prop1992, color=cover)) + geom_bar(stat="i
  # the errors come due to the fact that i dont explain to the system about the l2006 list in the system
  l2006 <- list_rast[[2]]
  
- 
+ #used again after so much time
