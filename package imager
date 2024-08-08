@@ -1,0 +1,35 @@
+
+#tryin to load the package imager
+install.packages("MODISTools")
+library(MODISTools)
+
+install.packages("ncdf4", repos = "https://cran.r-project.org")
+library(ncdf4)
+library(devtools)
+devtools::install_github("username/imageR")
+install.packages("magick")
+library(magick)
+library(imageRy)
+install.packages("rgee")
+library(rgee)
+im.list()
+file <- system.file("external/species.shp", package="sdm")
+install.packages("sdm")
+library(sdm)
+library(terra)
+
+# install.packages("devtools")
+# install.packages("terra")
+
+library(devtools)
+library(terra)
+
+devtools::install_github("ducciorocchini/imageRy")
+
+library(imageRy)
+
+install.packages("xopen")
+library(xopen)
+install.packages("imager")
+
+library(X11)
