@@ -1,0 +1,33 @@
+#Exam project
+#all the required libraries were downloaded. 
+library(openeo)
+library(devtools)
+library(terra)
+library(imageRy)
+install.packages("imager")
+library(imager)
+install_github("ducciorocchini/imageRy")
+library(imageRy)
+library(spatstat)
+library(vegan)
+
+library(ggplot2)
+library(raster)
+
+setwd("/Users/komaliftikhar/Downloads/chaman")
+
+install.packages("ncdf4")
+library(ncdf4)
+install.packages("viridis")
+library(viridis)
+install.packages("viridisLite")
+library(viridisLite)
+library(patchwork)
+install.packages("gridExtra")
+
+library(gridExtra)
+
+
+
+
+
