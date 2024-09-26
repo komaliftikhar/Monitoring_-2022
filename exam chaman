@@ -1,0 +1,176 @@
+#all the required libraries were downloaded. 
+library(openeo)
+library(devtools)
+library(terra)
+library(ggplot2)
+library(raster)
+
+setwd("/Users/komaliftikhar/Downloads/chaman")
+
+
+S2_A1 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B01.jp2")
+S2_A1
+plot(S2_A1)
+
+S2_A2 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B02.jp2")
+S2_A2
+plot(S2_A2)
+
+S2_A3 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B03.jp2")
+S2_A3
+plot(S2_A3)
+S2_A4 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B04.jp2")
+S2_A4
+plot(S2_A4)
+S2_A5 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B05.jp2")
+S2_A5
+plot(S2_A5)
+S2_A6 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B06.jp2")
+S2_A6
+plot(S2_A6)
+
+S2_A7 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B07.jp2")
+S2_A7
+plot(S2_A7)
+S2_A8 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B08.jp2")
+S2_A8
+plot(S2_A8)
+
+S2_A8A <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B8A.jp2")
+S2_A8A
+plot(S2_A8A)
+S2_A9 <- raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B09.jp2")
+S2_A9
+plot(S2_A9)
+S2_A10 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B10.jp2")
+S2_A10
+plot(S2_A10)
+
+S2_A11 <- raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B11.jp2")
+S2_A11
+plot(S2_A11)
+
+S2_A12 <-raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_B12.jp2")
+S2_A12
+plot(S2_A12)
+
+S2_TCI1 <- raster("~/Downloads/chaman/S2A_MSIL1C_20240806T061631_N0511_R034_T42RTV_20240806T084815.SAFE/GRANULE/L1C_T42RTV_A047650_20240806T062608/IMG_DATA/T42RTV_20240806T061631_TCI.jp2")
+S2_TCI1
+plot(S2_TCI1)
+
+# plot them
+par(mfrow=c(2,1))
+plot(S2_A1)
+plot(S2_A8A)
+
+
+c1 <- colorRampPalette(c("white", "darkblue", "black")) (100)
+
+c2 <- colorRampPalette(c("white", "darkgreen", "black")) (100)
+c3 <- colorRampPalette(c("white", "darkred", "black")) (100)
+c4 <- colorRampPalette(c("white", "lightyellow", "tomato", "darkred")) (100)
+
+plot(S2_A1[[1]], col = c1)
+plot(S2_A1[[1]], col = c2)
+plot(S2_A1[[1]], col = c3)
+plot(S2_A1[[1]], col = c4)
+dev.off()
+
+# proportion of the classes
+f2024 <- freq(S2_A1[[1]])
+f2024
+
+
+# total number of pixels
+tot2024 <- ncell(S2_A1[[1]])
+tot2024
+# percentage
+p2024 <- f2024 * 100 / tot2024
+p2024
+
+# building the final table
+class <- c("vegetation", "total")
+y2024 <- c(1105344, 3348900)
+tabout <- data.frame(class, y2024)
+tabout
+# final output
+p1 <- ggplot(tabout, aes(x=class, y=y2024, color=class)) + geom_bar(stat="identity", fill="lightgreen")
+plot(p1)
+
+
+boxplot(S2_A1, maxpixels=3348900, col="red")
+
+boxplot(S2_A2, maxpixels=120560400 , col="blue")
+
+boxplot(S2_A3, maxpixels=120560400 , col="green")
+a <- boxplot(S2_A1, maxpixels=3348900, col="red")
+a
+b <- boxplot(S2_A2, maxpixels=120560400, col="blue")
+b
+boxplot <- function(S2_A3) {
+  c <- boxplot(S2_A3, maxpixels=120560400 , col="green")
+}
+c
+
+
+#tryin to load the package imager
+install.packages("MODISTools")
+library(MODISTools)
+
+install.packages("ncdf4", repos = "https://cran.r-project.org")
+library(ncdf4)
+library(devtools)
+devtools::install_github("username/imageR")
+install.packages("magick")
+library(magick)
+library(imageRy)
+install.packages("rgee")
+library(rgee)
+im.list()
+file <- system.file("external/species.shp", package="sdm")
+install.packages("sdm")
+library(sdm)
+library(terra)
+
+# install.packages("devtools")
+# install.packages("terra")
+
+library(devtools)
+library(terra)
+
+devtools::install_github("ducciorocchini/imageRy")
+
+library(imageRy)
+
+install.packages("xopen")
+library(xopen)
+install.packages("imager")
+
+# 2023
+
+data_2023 <- raster("~/Downloads/chaman/2023alldata/2023jpg/2023-12-27-00:00_2023-12-27-23:59_Sentinel-2_L2A_NDVI.jpg")
+data_2023
+plot(data_2023)
+plotRGB(data_2023, r=1, g=2, b=3)
+
+install.packages("rasterVis")
+library(raster)
+library(rasterVis)
+library(ggplot2)
+library(rgdal)
+raster2023 <- raster("~/Downloads/chaman/2023alldata/2023-12-27-00:00_2023-12-27-23:59_Sentinel-2_L2A_NDVI.tiff")
+raster2024 <- raster("~/Downloads/chaman/2024alldata/2024-07-24-00:00_2024-07-24-23:59_Sentinel-2_L2A_NDVI.tiff")
+raster2023
+plot(raster2023)
+raster2024
+plot(raster2024)
+raster1_aligned = align(raster2023, raster2024)
+# multitemporal change detection
+raster1_aligned = raster2023[[1]] - raster2024[[1]] 
+cl <- colorRampPalette(c("brown", "grey", "orange")) (100)
+plot(raster1_aligned, col=cl)
+
+install.packages("Rgb")
+
+install.packages("terra")
+library(terra)
